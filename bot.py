@@ -88,4 +88,20 @@ if __name__ == '__main__':
     application.add_handler(CallbackQueryHandler(order_start, pattern="^order_"))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     print("বট চালু হয়েছে...")
+    import os
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import threading
+
+# Render-এর জন্য ডামি ওয়েব সার্ভার
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 8080))
+    server = HTTPServer(('0.0.0.0', port), BaseHTTPRequestHandler)
+    server.serve_forever()
+
+if __name__ == '__main__':
+    # ডামি সার্ভার চালু করা
+    threading.Thread(target=run_dummy_server, daemon=True).start()
+    
+    # বট চালু করা
+    print("বট চালু হয়েছে...")
     application.run_polling()
