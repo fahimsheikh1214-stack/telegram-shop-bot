@@ -4,7 +4,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler, MessageHandler, filters
 
 # --- আপনার তথ্য এখানে বসান ---
-BOT_TOKEN = "9206960808:AAH1CYTtCezRhhaZWrKqHUqodCnr9N2-j9k"
+BOT_TOKEN = "8686258762:AAHjfRugTypJZ0IyDHIU-Ca7XLDcRZjMXUY"
 ADMIN_CHAT_ID = 7464736224  # আপনার টেলিগ্রাম আইডি
 
 # --- আপনার পণ্যের তালিকা (এখানে আপনি নতুন পণ্য যোগ করতে পারবেন) ---
