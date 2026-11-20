@@ -1,4 +1,5 @@
 import logging
+from telegram import WebAppInfo
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler, MessageHandler, filters
 
@@ -18,8 +19,15 @@ user_data = {}
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_name = update.effective_user.first_name
-    text = f"স্বাগতম {user_name}! 🛍️\n\nআমাদের শপে আপনাকে স্বাগতম। নিচের মেনু থেকে পণ্য দেখতে পারেন।"
-    keyboard = [[InlineKeyboardButton("🛒 সব পণ্য দেখুন", callback_data="show_products")]]
+    text = f"স্বাগতম {user_name}! 🛍️\n\nআমাদের শপে আপনাকে স্বাগতম। নিচের বাটনে ক্লিক করে আমাদের ওয়েবসাইট থেকে পণ্য অর্ডার করতে পারেন।"
+    
+    # এখানে আপনার ওয়েবসাইটের লিংকটি বসাবেন
+    website_url = "https://fast0090.blogspot.com/?m=1" # <--- এখানে আপনার লিংক দিন
+    
+    # Open Site / Open App বাটন তৈরি
+    keyboard = [
+        [InlineKeyboardButton("🌐 Open Site", web_app=WebAppInfo(url=website_url))]
+    ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text(text, reply_markup=reply_markup)
 
