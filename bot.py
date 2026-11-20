@@ -22,7 +22,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = f"স্বাগতম {user_name}! 🛍️\n\nআমাদের শপে আপনাকে স্বাগতম। নিচের বাটনে ক্লিক করে আমাদের ওয়েবসাইট থেকে পণ্য অর্ডার করতে পারেন।"
     
     # এখানে আপনার ওয়েবসাইটের লিংকটি বসাবেন
-    website_url = "https://fast0090.blogspot.com/?m=1" # <--- এখানে আপনার লিংক দিন
+    website_url = "https://fastbazar71.blogspot.com/?m=1" # <--- এখানে আপনার লিংক দিন
     
     # Open Site / Open App বাটন তৈরি
     keyboard = [
